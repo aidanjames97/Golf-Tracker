@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1000001,
+        "name": "Huron Oaks",
+        "loc": "Bright's Grove, ON",
+        "holes": 18,
+        "ninePar": 36,
+        "nineDis": 3756,
+        "ePar": 72,
+        "eDist": 6987,
+        "coordinates": {
+            "latitude": 43.02397805770129,
+            "longitude": -82.26429332824019
+        },
+        "website": "none",
+        "review": 4
+    },
+    {
+        "id": 1000002,
+        "loc": "Sarnia, ON",
+        "name": "Sarnia G&C Club",
+        "holes": 18,
+        "ninePar": 36,
+        "nineDis": 3756,
+        "ePar": 72,
+        "eDist": 6987,
+        "coordinates": {
+            "latitude": 42.992161024837884,
+            "longitude": -82.39532698609702
+        },
+        "website": "none",
+        "review": 0
+    },
+    {
+        "id": 1000003,
+        "loc": "Sarnia, ON",
+        "name": "Greystone GC",
+        "holes": 9,
+        "ninePar": 36,
+        "nineDis": 3756,
+        "ePar": 0,
+        "eDist": 0,
+        "coordinates": {
+            "latitude": 42.960966442983384,
+            "longitude": -82.29152739171403
+        },
+        "website": "none",
+        "review": 2
+    },
+    {
+        "id": 1000004,
+        "loc": "St Clair, ON",
+        "name": "St Clair Parkway GC",
+        "holes": 9,
+        "ninePar": 36,
+        "nineDis": 3756,
+        "ePar": 71,
+        "eDist": 7122,
+        "coordinates": {
+            "latitude": 42.84528315459219,
+            "longitude": -82.456584030307
+        },
+        "website": "none",
+        "review": 5
+    },
+    {
+        "id": 1000005,
+        "loc": "London, ON",
+        "name": "Thames Valley GC",
+        "holes": 18,
+        "ninePar": 36,
+        "nineDis": 3756,
+        "ePar": 72,
+        "eDist": 7356,
+        "coordinates": {
+            "latitude": 42.9638362239967,
+            "longitude": -81.29952277438315
+        },
+        "website": "none",
+        "review": 3
+    }
+]

@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1001,
+        "shot": 77,
+        "coordinates": {
+            "latitude": 43.02397805770129,
+            "longitude": -82.26429332824019
+        },
+        "name": "Huron Oaks",
+        "loc": "Bright's Grove, ON",
+        "par": 72,
+        "handicap": true,
+        "date": {
+            "day": 11,
+            "month": "May",
+            "year": "2023"
+        }
+    },
+    {
+        "id": 1002,
+        "shot": 71,
+        "coordinates": {
+            "latitude": 42.992161024837884,
+            "longitude": -82.39532698609702
+        },
+        "name": "Sarnia GCC",
+        "loc": "Point Edward, ON",
+        "par": 72,
+        "handicap": false,
+        "date": {
+            "day": 15,
+            "month": "May",
+            "year": "2024"
+        }
+    },
+    {
+        "id": 1003,
+        "shot": 33,
+        "coordinates": {
+            "latitude": 42.960966442983384,
+            "longitude": -82.29152739171403
+        },
+        "name": "Greystone GC",
+        "loc": "Sarnia, ON",
+        "par": 36,
+        "handicap": false,
+        "date": {
+            "day": 1,
+            "month": "Sept",
+            "year": "2024"
+        }
+    },
+    {
+        "id": 1004,
+        "shot": 70,
+        "coordinates": {
+            "latitude": 42.84528315459219,
+            "longitude": -82.456584030307
+        },
+        "name": "St Clair Parkway GC",
+        "loc": "St Clair, ON",
+        "par": 71,
+        "handicap": true,
+        "date": {
+            "day": 30,
+            "month": "Aug",
+            "year": "2023"
+        }
+    },
+    {
+        "id": 1005,
+        "shot": 66,
+        "coordinates": {
+            "latitude": 42.9638362239967,
+            "longitude": -81.29952277438315
+        },
+        "name": "Thames Valley GC",
+        "loc": "London, ON",
+        "par": 72,
+        "handicap": true,
+        "date": {
+            "day": 27,
+            "month": "Apr",
+            "year": "2024"
+        }
+    }
+]

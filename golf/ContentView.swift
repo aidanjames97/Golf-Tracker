@@ -8,17 +8,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection: Tab = .round
+    
+    enum Tab {
+        case round
+        case courses
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView(selection: $selection) {
+            RoundList()
+                .tabItem {
+                    Label("Rounds", systemImage: "star.circle")
+                }
+                .tag(Tab.round)
+            CourseList()
+                .tabItem {
+                    Label("Courses", systemImage: "list.bullet.circle")
+                }
+            AddRound()
+                .tabItem {
+                    Label("Add Round", systemImage: "plus.circle")
+                }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(ModelData())
 }
