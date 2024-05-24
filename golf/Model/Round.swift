@@ -11,7 +11,7 @@ import SwiftUI
 
 struct Round: Hashable, Codable, Identifiable {
     var id: Int // unique round id
-    var shot: Int // users shots scored
+    var shot: String // users shots scored
     
     // course coordinates for maps
     private var coordinates: Coordinates

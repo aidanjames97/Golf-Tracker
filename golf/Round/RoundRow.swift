@@ -13,7 +13,9 @@ struct RoundRow: View {
     var body: some View {
         HStack {
             MapView(coordinate: round.locationCoordinates, zoom: 0.02)
-                .frame(width: 75, height: 75)
+                .frame(width: 70, height: 70)
+                .padding(5)
+                .cornerRadius(25)
             
             VStack(alignment: .leading) {
                 Text(round.name)
@@ -29,12 +31,20 @@ struct RoundRow: View {
             if (round.handicap) {
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)
+                    .padding(.trailing, 5)
             } else {
                 Image(systemName: "star")
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.white)
+                    .padding(.trailing, 5)
             }
         }
-        .background(Color.clear)
+        .background(
+            RoundedRectangle (cornerRadius: 10)
+                .foregroundStyle(.white)
+                .opacity(0.25)
+                .brightness(-0.4)
+        )
+        .foregroundStyle(.white)
     }
 }
 

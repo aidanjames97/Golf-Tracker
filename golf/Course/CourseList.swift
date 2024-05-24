@@ -10,19 +10,28 @@ import SwiftUI
 struct CourseList: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
+    @State private var showCourse = false
+    
+    let gradientColors: [Color] = [
+        .gradientTop,
+        .gradientBottom
+    ]
 
-        var filteredCourses: [Course] {
-            if searchText.isEmpty {
-                return modelData.courses
-            } else {
-                return modelData.courses.filter { c in
-                    c.name.localizedCaseInsensitiveContains(searchText)
-                }
+    var filteredCourses: [Course] {
+        if searchText.isEmpty {
+            return modelData.courses
+        } else {
+            return modelData.courses.filter { c in
+                c.name.localizedCaseInsensitiveContains(searchText)
             }
         }
+    }
     
     var body: some View {
-        NavigationView {
+        ZStack(alignment: .topLeading) {
+            Rectangle()
+                .fill(.clear)
+                .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Find a Course")
                     .font(.title)
@@ -31,10 +40,10 @@ struct CourseList: View {
                 // Search Bar
                 TextField("Search...", text: $searchText)
                     .padding(7)
-                    .padding(.horizontal, 25)
+                    .padding(.horizontal, 5)
+                    .foregroundStyle(.black)
                     .background(Color(.systemGray6))
                     .cornerRadius(8)
-                    .padding(.horizontal, 10)
                     .overlay(
                         HStack {
                             Spacer()
@@ -44,31 +53,34 @@ struct CourseList: View {
                                 }) {
                                     Image(systemName: "multiply.circle.fill")
                                         .padding(.trailing, 15)
+                                        .foregroundStyle(.red)
                                 }
                             }
                         }
                     )
                 
                 // Filtered List
-                List{
-                    ForEach(filteredCourses) { c in
-                        NavigationLink {
-                            CourseView(course: c)
-                                .frame(width: .infinity, height: .infinity)
-                        } label: {
-                            Text("\(c.name) - \(c.loc)")
-                                .foregroundStyle(.black)
-                        }
+                ForEach(filteredCourses) { c in
+                    Button {
+                        showCourse.toggle()
+                    } label: {
+                        CourseRow(s: "\(c.name) - \(c.loc)")
+                    }
+                    .sheet(isPresented: $showCourse) {
+                        CourseView(course: c)
+                            .presentationDetents([.fraction(0.999)])
                     }
                 }
-                .navigationBarHidden(true)
-                .animation(.default, value: filteredCourses)
             }
         }
+        .padding(.horizontal, 10)
     }
 }
 
 #Preview {
     CourseList()
+        .frame(maxHeight: .infinity)
+        .background(Gradient(colors: gradientColors))
+        .foregroundStyle(.white)
         .environment(ModelData())
 }
