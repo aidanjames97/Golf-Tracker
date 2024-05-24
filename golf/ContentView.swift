@@ -7,30 +7,46 @@
 
 import SwiftUI
 
+// global
+let gradientColors: [Color] = [
+    .gradientTop,
+    .gradientBottom
+]
+
 struct ContentView: View {
     @State private var selection: Tab = .round
     
     enum Tab {
         case round
         case courses
+        case profile
     }
     
     var body: some View {
-        TabView(selection: $selection) {
+        TabView {
             RoundList()
                 .tabItem {
-                    Label("Rounds", systemImage: "star.circle")
+                    Image(systemName: "star.circle")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .aspectRatio(contentMode: .fit)
                 }
                 .tag(Tab.round)
             CourseList()
                 .tabItem {
-                    Label("Courses", systemImage: "list.bullet.circle")
+                    Image(systemName: "list.bullet.circle")
+                        .aspectRatio(contentMode: .fill)
                 }
-            AddRound()
+                .tag(Tab.courses)
+            ProfileView()
                 .tabItem {
-                    Label("Add Round", systemImage: "plus.circle")
+                    Image(systemName: "person.circle")
                 }
+                .tag(Tab.profile)
         }
+        .background(Gradient(colors: gradientColors))
+        .tabViewStyle(.page)
+        .foregroundStyle(.white)
     }
 }
 

@@ -6,11 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct Profile {
     var username: String
     var notifications: Bool = true
     var handicap: String = "12"
+    var pic: Image {
+        Image("jones")
+    }
     
     static let `default` = Profile(username: "StingRox")
 }

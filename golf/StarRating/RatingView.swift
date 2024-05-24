@@ -17,8 +17,8 @@ struct RatingView: View {
     var offImage: Image?
     var onImage = Image(systemName: "star.fill")
 
-    var offColor = Color.gray
-    var onColor = Color.yellow
+    var offColor = Color.white
+    var onColor = Color.gradientTop
     
     func image(for number: Int) -> Image {
         if number > rating {
