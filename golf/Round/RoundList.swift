@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RoundList: View {
     @Environment(ModelData.self) var modelData
-    @State private var roundShow = false
+    @State private var selected: Round?
     
     let gradientColors: [Color] = [
         .gradientTop,
@@ -29,18 +29,18 @@ struct RoundList: View {
                     
                     ForEach(modelData.rounds) { round in
                         Button {
-                            roundShow.toggle()
+                            selected = round
                         } label: {
                             RoundRow(round: round)
                         }
-                        .sheet(isPresented: $roundShow) {
-                            RoundDetail(round: round, profile: modelData.profile)
-                                .presentationDetents([.fraction(0.999)])
-                        }
                     }
-                    .padding(.horizontal, 10)
+                    .sheet(item: $selected, content: { r in
+                        RoundDetail(round: r, profile: modelData.profile)
+                            .presentationDetents([.fraction(0.999)])
+                    })
                 }
             }
+            .padding(.horizontal, 10)
         }
     }
 }
