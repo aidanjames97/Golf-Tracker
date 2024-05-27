@@ -10,7 +10,7 @@ import SwiftUI
 struct CourseList: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
-    @State private var showCourse = false
+    @State private var selected: Course?
     
     let gradientColors: [Color] = [
         .gradientTop,
@@ -62,15 +62,15 @@ struct CourseList: View {
                 // Filtered List
                 ForEach(filteredCourses) { c in
                     Button {
-                        showCourse.toggle()
+                        selected = c
                     } label: {
                         CourseRow(s: "\(c.name) - \(c.loc)")
                     }
-                    .sheet(isPresented: $showCourse) {
-                        CourseView(course: c)
-                            .presentationDetents([.fraction(0.999)])
-                    }
                 }
+                .sheet(item: $selected, content: { c in
+                    CourseView(course: c)
+                        .presentationDetents([.fraction(0.999)])
+                })
             }
         }
         .padding(.horizontal, 10)

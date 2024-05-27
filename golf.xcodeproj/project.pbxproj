@@ -106,6 +106,7 @@
 		E9A7CAEC2BFE83D600BCED24 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				E9D169F12BFF97D50033A6FF /* CourseRow.swift */,
 				E9A7CAE22BFCDBB300BCED24 /* CourseView.swift */,
 				E9A7CAEA2BFD30D400BCED24 /* CourseList.swift */,
 			);
@@ -116,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				E9F209372BF4E538009E9DE7 /* RoundRow.swift */,
-				E9D169F12BFF97D50033A6FF /* CourseRow.swift */,
 				E9F209392BF4E70E009E9DE7 /* RoundDetail.swift */,
 				E9F209352BF3D0F2009E9DE7 /* RoundList.swift */,
 				E9F2093F2BF4FED0009E9DE7 /* AddRound.swift */,
