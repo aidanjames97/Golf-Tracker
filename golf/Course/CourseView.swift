@@ -126,7 +126,7 @@ struct CourseView: View {
                 Label("Add Round", systemImage: "plus")
             }
             .sheet(isPresented: $addRound) {
-                AddRound(course: course, userShot: .constant("66"))
+                AddRound(course: course, userShot: .constant(""), bPut: .constant(""), wPut: .constant(""))
                     .presentationDetents([.fraction(0.999)])
             }
                 .padding(10)

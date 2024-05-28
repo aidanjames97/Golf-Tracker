@@ -37,4 +37,8 @@ struct Round: Hashable, Codable, Identifiable {
         var month: String
         var year: String
     }
+    var Tputs: Int // total puts
+    var Bputs: Int // best put
+    var Wputs: Int // worst puts
+    var holePlayed: Int // holes user played
 }

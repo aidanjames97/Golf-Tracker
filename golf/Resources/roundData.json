@@ -14,7 +14,11 @@
             "day": 11,
             "month": "May",
             "year": "2023"
-        }
+        },
+        "Tputs": 33,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1002,
@@ -31,7 +35,11 @@
             "day": 15,
             "month": "May",
             "year": "2024"
-        }
+        },
+        "Tputs": 31,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1003,
@@ -48,7 +56,11 @@
             "day": 1,
             "month": "Sept",
             "year": "2024"
-        }
+        },
+        "Tputs": 33,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1004,
@@ -65,7 +77,11 @@
             "day": 30,
             "month": "Aug",
             "year": "2023"
-        }
+        },
+        "Tputs": 30,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1005,
@@ -82,7 +98,11 @@
             "day": 27,
             "month": "Apr",
             "year": "2024"
-        }
+        },
+        "Tputs": 25,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1006,
@@ -99,7 +119,11 @@
             "day": 15,
             "month": "May",
             "year": "2024"
-        }
+        },
+        "Tputs": 28,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1007,
@@ -116,7 +140,11 @@
             "day": 15,
             "month": "May",
             "year": "2024"
-        }
+        },
+        "Tputs": 29,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1008,
@@ -133,7 +161,11 @@
             "day": 11,
             "month": "May",
             "year": "2023"
-        }
+        },
+        "Tputs": 32,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     },
     {
         "id": 1009,
@@ -150,6 +182,10 @@
             "day": 11,
             "month": "May",
             "year": "2023"
-        }
+        },
+        "Tputs": 31,
+        "Bputs": 1,
+        "Wputs": 3,
+        "holePlayed": 18
     }
 ]

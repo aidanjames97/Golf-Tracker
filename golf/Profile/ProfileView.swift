@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @Environment(\.editMode) var editMode
     @Environment(ModelData.self) var modelData
+    @State private var editProfile = false
+    @State private var draftProfile = Profile.default
     
     private var tmpBest = 66
     private var tmpBestPar = 72
@@ -47,28 +50,13 @@ struct ProfileView: View {
                 Spacer()
                 Text("\(tmpBest) (\(tmpBest-tmpBestPar))")
             }
-                
             Spacer()
-        
-            HStack(alignment: .center) {
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Text("Edit")
-                }
-                .frame(width: 100, height: 50, alignment: .center)
-                .background(.gradientTop)
-                .cornerRadius(12)
-                .padding(.bottom, 50)
-                Spacer()
             }
-        }
-        .padding(.horizontal, 25)
-        .padding()
-        .foregroundStyle(.white)
-        .font(.title3)
-        .bold()
+            .padding(.horizontal, 25)
+            .padding()
+            .foregroundStyle(.white)
+            .font(.title3)
+            .bold()
     }
 }
 
@@ -82,7 +70,7 @@ struct CircleImage: View {
                 .overlay {
                     Circle().stroke(.white, lineWidth: 4)
                 }
-                .shadow(radius: 10)
+                .shadow(radius: 8)
             }
     }
 

@@ -10,22 +10,17 @@ import SwiftUI
 struct AddRound: View {
     @Environment(ModelData.self) var modelData
     var course: Course
+    @State private var done = false
     
     @Binding var userShot: String
+    @Binding var bPut: String
+    @Binding var wPut: String
     
     var dateRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .year, value: -1, to: .distantFuture)!
         let max = Calendar.current.date(byAdding: .year, value: 1, to: .distantFuture)!
             return min...max
         }
-    
-    // new round id
-    // coordinates from course
-    // name from course
-    // loc from course
-    // par from course
-    // hanicap calculated
-
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -68,15 +63,53 @@ struct AddRound: View {
                 }
                 .padding(.bottom, 10)
                 Divider()
-                    .padding(.leading, 25)
-                    .padding(.trailing, 25)
+                    .overlay(.white)
+                    .padding(.horizontal, 25)
                     .padding(.bottom, 10)
                 
                 // user shot
                 HStack {
-                    TextField("Shot:", text: $userShot)
+                    Text("Shot:")
+                    Spacer()
+                    TextField("shot", text: $userShot)
+                        .multilineTextAlignment(.trailing)
+                        .autocorrectionDisabled()
                 }
+                .padding(.horizontal, 25)
+                HStack {
+                    Text("Best Put:")
+                    TextField("best", text: $userShot)
+                        .multilineTextAlignment(.trailing)
+                        .autocorrectionDisabled()
+                }
+                .padding(.horizontal, 25)
+                HStack {
+                    Text("Worst Put:")
+                    TextField("worst", text: $userShot)
+                        .multilineTextAlignment(.trailing)
+                        .autocorrectionDisabled()
+                }
+                .padding(.horizontal, 25)
+                HStack {
+                    Text("Holes Played:")
+                    TextField("holes", text: $userShot)
+                        .multilineTextAlignment(.trailing)
+                        .autocorrectionDisabled()
+                }
+                .padding(.horizontal, 25)
+                
                 Spacer()
+                
+                Button {
+                    done.toggle()
+                } label: {
+                    Label("Done", systemImage: "checkmark")
+                }
+                    .padding(10)
+                    .foregroundStyle(.white)
+                    .bold()
+                    .background(.gradientTop)
+                    .cornerRadius(25)
             }
             .padding()
         }
@@ -102,6 +135,6 @@ struct CircleMap: View {
 
 #Preview {
     let modelData = ModelData()
-    return AddRound(course: modelData.courses[0], userShot: .constant("66"))
+    return AddRound(course: modelData.courses[0], userShot: .constant(""), bPut: .constant(""), wPut: .constant(""))
         .environment(ModelData())
 }
