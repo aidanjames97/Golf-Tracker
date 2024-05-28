@@ -34,7 +34,7 @@ struct RoundDetail: View {
                 VStack {
                     Text("Par")
                         .bold()
-                    Text(String(round.par))
+                    Text(String(round.par)) // par will be adjusted depending on 
                 }
                 .padding(.trailing, 20)
                 
@@ -70,21 +70,34 @@ struct RoundDetail: View {
                 VStack {
                     Text("Avg")
                         .bold()
-                    Text(String(round.par))
+                    if round.holePlayed == 18 {
+                        let avg: Float = (Float(round.Tputs)/18)
+                        Text(String(format: "%.1f", avg))
+                    } else {
+                        let avg: Float = (Float(round.Tputs)/9)
+                        Text(String(format: "%.1f", avg))
+                    }
                 }
                 .padding(.trailing, 20)
                 
                 VStack {
                     Text("Best")
                         .bold()
-                    Text(String(round.shot))
+                    Text(String(round.Bputs))
+                }
+                .padding(.trailing, 20)
+                
+                VStack {
+                    Text("Worst")
+                        .bold()
+                    Text(String(round.Wputs))
                 }
                 .padding(.trailing, 20)
                 
                 VStack {
                     Text("Total")
                         .bold()
-                    Text("33")
+                    Text(String(round.Tputs))
                 }
             }
             // divides next section
@@ -147,6 +160,6 @@ struct TextOverlay: View {
 
 #Preview {
     let modelData = ModelData()
-    return RoundDetail(round: modelData.rounds[4], profile: modelData.profile)
+    return RoundDetail(round: modelData.rounds[1], profile: modelData.profile)
         .frame(maxHeight: .infinity)
 }
