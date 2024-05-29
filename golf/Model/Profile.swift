@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Profile {
+    @Environment(ModelData.self) var modelData
     var username: String
     var notifications: Bool = true
     var handicap: String = "12"

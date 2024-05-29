@@ -28,7 +28,6 @@ struct ProfileEdit: View {
             HStack {
                 Text("Image:")
                 Spacer()
-                Text("PASTEABLE IMAGE??")
             }
             .padding(.bottom, -5)
             Divider()

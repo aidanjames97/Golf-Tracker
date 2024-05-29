@@ -16,6 +16,7 @@
 		E9D169F22BFF97D50033A6FF /* CourseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F12BFF97D50033A6FF /* CourseRow.swift */; };
 		E9D169F42C0638DA0033A6FF /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F32C0638DA0033A6FF /* ProfileEdit.swift */; };
 		E9D169F62C063FB90033A6FF /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F52C063FB90033A6FF /* ProfileHost.swift */; };
+		E9D169FB2C0666060033A6FF /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D169FA2C0666060033A6FF /* WelcomeScreen.storyboard */; };
 		E9F2090C2BF3CE83009E9DE7 /* golfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2090B2BF3CE83009E9DE7 /* golfApp.swift */; };
 		E9F2090E2BF3CE83009E9DE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2090D2BF3CE83009E9DE7 /* ContentView.swift */; };
 		E9F209102BF3CE85009E9DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F2090F2BF3CE85009E9DE7 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		E9D169F12BFF97D50033A6FF /* CourseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseRow.swift; path = golf/Course/CourseRow.swift; sourceTree = SOURCE_ROOT; };
 		E9D169F32C0638DA0033A6FF /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
 		E9D169F52C063FB90033A6FF /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
+		E9D169FA2C0666060033A6FF /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
 		E9F209082BF3CE83009E9DE7 /* golf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = golf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F2090B2BF3CE83009E9DE7 /* golfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = golfApp.swift; sourceTree = "<group>"; };
 		E9F2090D2BF3CE83009E9DE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		E9D169F72C065F4A0033A6FF /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E9D169FA2C0666060033A6FF /* WelcomeScreen.storyboard */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		E9F208FF2BF3CE83009E9DE7 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 		E9F2090A2BF3CE83009E9DE7 /* golf */ = {
 			isa = PBXGroup;
 			children = (
+				E9D169F72C065F4A0033A6FF /* Welcome */,
 				E9A7CAEE2BFE885C00BCED24 /* Profile */,
 				E9A7CAED2BFE83E300BCED24 /* Round */,
 				E9A7CAEC2BFE83D600BCED24 /* Course */,
@@ -343,6 +354,7 @@
 			files = (
 				E9F2094F2BF63D4A009E9DE7 /* roundData.json in Resources */,
 				E9F209132BF3CE85009E9DE7 /* Preview Assets.xcassets in Resources */,
+				E9D169FB2C0666060033A6FF /* WelcomeScreen.storyboard in Resources */,
 				E9A7CAE72BFD116400BCED24 /* courseData.json in Resources */,
 				E9F209102BF3CE85009E9DE7 /* Assets.xcassets in Resources */,
 			);
@@ -550,13 +562,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"golf/Preview Content\"";
+				DEVELOPMENT_TEAM = WU23BBAJWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Golf Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = WelcomeScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,13 +592,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"golf/Preview Content\"";
+				DEVELOPMENT_TEAM = WU23BBAJWX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Golf Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = WelcomeScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,8 +619,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WU23BBAJWX;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
@@ -612,7 +630,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/golf.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/golf";
 			};
 			name = Debug;
@@ -622,8 +640,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WU23BBAJWX;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				MARKETING_VERSION = 1.0;
@@ -631,7 +651,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/golf.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/golf";
 			};
 			name = Release;
@@ -642,6 +662,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WU23BBAJWX;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = aidanjames.golfUITests;
@@ -659,6 +680,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WU23BBAJWX;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = aidanjames.golfUITests;
