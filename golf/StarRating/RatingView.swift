@@ -48,6 +48,5 @@ struct RatingView: View {
 }
 
 #Preview {
-    let modelData = ModelData()
-    return RatingView(rating: 2)
+    RatingView(rating: 2)
 }

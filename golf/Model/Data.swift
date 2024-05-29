@@ -12,8 +12,6 @@ class ModelData {
     var rounds: [Round] = load("roundData.json") // loading json round array
     var profile: Profile = Profile.default
     var courses: [Course] = load("courseData.json")
-    
-    
 }
 
 // load fetches JSON data with given name from main bundle

@@ -25,6 +25,7 @@ struct ContentView: View {
     var body: some View {
         TabView {
             RoundList()
+                .environment(ModelData())
                 .tabItem {
                     Image(systemName: "star.circle")
                         .resizable()
@@ -33,12 +34,14 @@ struct ContentView: View {
                 }
                 .tag(Tab.round)
             CourseList()
+                .environment(ModelData())
                 .tabItem {
                     Image(systemName: "list.bullet.circle")
                         .aspectRatio(contentMode: .fill)
                 }
                 .tag(Tab.courses)
-            ProfileView()
+            ProfileHost()
+                .environment(ModelData())
                 .tabItem {
                     Image(systemName: "person.circle")
                 }

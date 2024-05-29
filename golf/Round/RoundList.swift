@@ -32,10 +32,12 @@ struct RoundList: View {
                             selected = round
                         } label: {
                             RoundRow(round: round)
+                                .environment(ModelData())
                         }
                     }
                     .sheet(item: $selected, content: { r in
                         RoundDetail(round: r, profile: modelData.profile)
+                            .environment(ModelData())
                             .presentationDetents([.fraction(0.999)])
                     })
                 }

@@ -13,9 +13,6 @@ struct ProfileView: View {
     @State private var editProfile = false
     @State private var draftProfile = Profile.default
     
-    private var tmpBest = 66
-    private var tmpBestPar = 72
-    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -45,11 +42,6 @@ struct ProfileView: View {
             }
             .padding(.bottom, 15)
             
-            HStack {
-                Text("Best Round: ")
-                Spacer()
-                Text("\(tmpBest) (\(tmpBest-tmpBestPar))")
-            }
             Spacer()
             }
             .padding(.horizontal, 25)

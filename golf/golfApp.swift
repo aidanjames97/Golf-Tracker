@@ -12,6 +12,7 @@ struct golfApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(ModelData())
         }
     }
 }

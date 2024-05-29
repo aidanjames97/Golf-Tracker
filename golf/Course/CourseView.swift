@@ -15,15 +15,16 @@ struct CourseView: View {
     
     // what is to be displayed onscreen
     var body: some View {
-        // vertical stack container
+        // vertical stack container for entire screen
         VStack {
+            // map background
             MapView(coordinate: course.locationCoordinates, zoom: 0.025)
-            // using TextOverlay struct (below) to display text on top of map
+                // using TextOverlay struct (below) to display text on top of map
                 .overlay {
                     TextOverlayLoc(loc: course.loc, name: course.name)
                 }
-            
-            // display course website
+            // --- website section ---
+            // course website header
             HStack {
                 VStack {
                     Divider()
@@ -39,17 +40,23 @@ struct CourseView: View {
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)
-            
-            Text("www.huronoaks.com/test")
-                .bold()
-                .font(.title3)
-            
+            // if course has website, link
+            if course.name == "none" {
+                Text("No website available")
+                    .bold()
+                    .font(.title3)
+            } else {
+                Link("www.\(course.name).com", destination: URL(string: "course.website")!)
+                    .bold()
+                    .font(.title3)
+            }
+            // --- course info section ---
+            // course info header
             HStack {
                 VStack {
                     Divider()
                         .overlay(.white)
                 }
-                // course information
                 Text("Course Info:")
                     .frame(width: 150)
                     .bold()
@@ -99,6 +106,8 @@ struct CourseView: View {
                     .padding(.leading, 15)
                 }
             }
+            // --- rating section ---
+            // course rating header
             HStack {
                 VStack {
                     Divider()
@@ -115,18 +124,18 @@ struct CourseView: View {
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)
-            
+            // rating view stars
             RatingView(rating: course.review)
                 .padding(.top, 5)
                 .padding(.bottom, 10)
-            
+            // --- add round section ---
             Button {
                 addRound.toggle()
             } label: {
                 Label("Add Round", systemImage: "plus")
             }
             .sheet(isPresented: $addRound) {
-                AddRound(course: course, userShot: .constant(""), bPut: .constant(""), wPut: .constant(""))
+                AddRound(course: course)
                     .presentationDetents([.fraction(0.999)])
             }
                 .padding(10)
