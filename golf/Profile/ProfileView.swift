@@ -17,10 +17,23 @@ struct ProfileView: View {
         VStack(alignment: .leading) {
             HStack {
                 CircleImage(pic: modelData.profile.pic)
-                Text(modelData.profile.username)
-                    .font(.title)
-                    .bold()
-                    .padding(.leading, 10)
+                if modelData.profile.username.count < 10 {
+                    Text(modelData.profile.username)
+                        .font(.title)
+                        .bold()
+                        .padding(.leading, 10)
+                } else if modelData.profile.username.count < 13 {
+                    Text(modelData.profile.username)
+                        .font(.title2)
+                        .bold()
+                        .padding(.leading, 10)
+                } else {
+                    Text(modelData.profile.username)
+                        .font(.title3)
+                        .bold()
+                        .padding(.leading, 10)
+                }
+                
                 Spacer()
             }
             
@@ -44,7 +57,7 @@ struct ProfileView: View {
             
             Spacer()
             }
-            .padding(.horizontal, 25)
+            .padding(.horizontal, 20)
             .padding()
             .foregroundStyle(.white)
             .font(.title3)

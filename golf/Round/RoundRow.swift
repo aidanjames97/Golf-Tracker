@@ -49,6 +49,5 @@ struct RoundRow: View {
 }
 
 #Preview {
-    let round = ModelData().rounds
-    return RoundRow(round: round[0])
+    RoundRow(round: Round.sampleData[0])
 }

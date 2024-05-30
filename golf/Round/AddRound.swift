@@ -9,18 +9,19 @@ import SwiftUI
 import Foundation
 
 struct AddRound: View {
-    @Environment(ModelData.self) var modelData
+    @Binding var round: [Round]
+    @State private var newRound = Round.emptyRound
     var course: Course
-    @State private var done = false
+    @Binding var done: Bool
     
     @State private var userShot = "" // to be int
     @State private var tPut = "" // to be int
     @State private var bPut = "" // to be int
     @State private var wPut = "" // to be int
     @State private var holesPlayed = "" // to be int
-    @State private var date = Date()
     
     @State private var showAlert = false
+    @State private var valid = true
     
     var dateRange: ClosedRange<Date> {
         let min = Calendar.current.date(byAdding: .year, value: -1, to: .distantFuture)!
@@ -114,33 +115,49 @@ struct AddRound: View {
                 Spacer()
                 
                 // Done button section, checking for correct inputs
-                @State var idVal = modelData.rounds[(modelData.rounds.count)-1].id  + 1 // getting last id and adding one
-                    
                 Button("Done", systemImage: "checkmark", action : {
                     // checking shot input
-                    if userShot.isEmpty || !CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: userShot)) {
+                    if userShot.isEmpty || !(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: userShot))) {
                         showAlert = true
+                        valid = false
                     }
                     // checking total puts input
-                    if tPut.isEmpty || !CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: tPut)) {
+                    if tPut.isEmpty || !(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: tPut))) {
                         showAlert = true
+                        valid = false
                     }
                     // checking best put input
-                    if bPut.isEmpty || !CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: bPut)) {
+                    if bPut.isEmpty || !(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: bPut))) {
                         showAlert = true
+                        valid = false
                     }
                     // checking worst put input
-                    if wPut.isEmpty || !CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: wPut)) {
+                    if wPut.isEmpty || !(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: wPut))) {
                         showAlert = true
+                        valid = false
                     }
                     // checking holes played input
-                    if holesPlayed.isEmpty || !CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: holesPlayed)) {
+                    if holesPlayed.isEmpty || !(CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: holesPlayed))) {
                         showAlert = true
+                        valid = false
                     }
                     
-                    // at this point all inputs are considered valid for entry
-                    
-                    done.toggle()
+                    if valid {
+                        // at this point all inputs are considered valid for entry
+                        newRound = Round.init(shot: userShot, latitude: course.locationCoordinates.latitude, longitude: course.locationCoordinates.longitude, name: course.name, loc: course.loc, par: course.ePar, handicap: false, date: .init(day: 11, month: "May", year: "2024"), Tputs: Int(tPut)!, Bputs: Int(bPut)!, Wputs: Int(wPut)!, holePlayed: Int(holesPlayed)!)
+                        
+                        // appending new round to list
+                        round.append(newRound)
+                        // resetting values
+                        userShot = ""
+                        tPut = ""
+                        wPut = ""
+                        bPut = ""
+                        holesPlayed = ""
+                        done = false // to close out sheet presented
+                    } else {
+                        showAlert = true
+                    }
                 })
                 .padding(10)
                 .foregroundStyle(.white)
@@ -150,7 +167,6 @@ struct AddRound: View {
             }
             .padding()
         }
-        .frame(height: .infinity)
         .foregroundStyle(.white)
         .background(Gradient(colors: gradientColors))
         .alert(isPresented: $showAlert) {
@@ -173,10 +189,4 @@ struct CircleMap: View {
                 }
                 .shadow(radius: 50)
         }
-}
-
-#Preview {
-    let modelData = ModelData()
-    return AddRound(course: modelData.courses[0])
-        .environment(ModelData())
 }

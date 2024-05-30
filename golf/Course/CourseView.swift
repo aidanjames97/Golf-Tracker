@@ -11,6 +11,7 @@ import MapKit
 struct CourseView: View {
     @Environment(ModelData.self) var modelData
     var course: Course
+    @Binding var rounds: [Round]
     @State private var addRound = false
     
     // what is to be displayed onscreen
@@ -135,7 +136,7 @@ struct CourseView: View {
                 Label("Add Round", systemImage: "plus")
             }
             .sheet(isPresented: $addRound) {
-                AddRound(course: course)
+                AddRound(round: $rounds, course: course, done: $addRound)
                     .presentationDetents([.fraction(0.999)])
             }
                 .padding(10)
@@ -194,11 +195,4 @@ struct TextOverlayLoc: View {
         }
         .foregroundStyle(.white)
     }
-}
-
-#Preview {
-    let modelData = ModelData()
-    return CourseView(course: modelData.courses[0])
-        .frame(maxHeight: .infinity)
-        .environment(ModelData())
 }

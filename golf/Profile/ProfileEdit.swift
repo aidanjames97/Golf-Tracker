@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileEdit: View {
     @Environment(ModelData.self) var modelData
-    @Binding var profile: Profile
+    @Binding var profile: Profile // this is a draft profile
     @State private var done = false
     
     var body: some View {
