@@ -17,6 +17,7 @@
 		E9D169F42C0638DA0033A6FF /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F32C0638DA0033A6FF /* ProfileEdit.swift */; };
 		E9D169F62C063FB90033A6FF /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F52C063FB90033A6FF /* ProfileHost.swift */; };
 		E9D169FB2C0666060033A6FF /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D169FA2C0666060033A6FF /* WelcomeScreen.storyboard */; };
+		E9D16A3C2C08B28C0033A6FF /* RoundStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D16A3B2C08B28C0033A6FF /* RoundStore.swift */; };
 		E9F2090C2BF3CE83009E9DE7 /* golfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2090B2BF3CE83009E9DE7 /* golfApp.swift */; };
 		E9F2090E2BF3CE83009E9DE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2090D2BF3CE83009E9DE7 /* ContentView.swift */; };
 		E9F209102BF3CE85009E9DE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F2090F2BF3CE85009E9DE7 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		E9D169F32C0638DA0033A6FF /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
 		E9D169F52C063FB90033A6FF /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		E9D169FA2C0666060033A6FF /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
+		E9D16A3B2C08B28C0033A6FF /* RoundStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundStore.swift; sourceTree = "<group>"; };
 		E9F209082BF3CE83009E9DE7 /* golf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = golf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F2090B2BF3CE83009E9DE7 /* golfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = golfApp.swift; sourceTree = "<group>"; };
 		E9F2090D2BF3CE83009E9DE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				E9F209412BF50221009E9DE7 /* Round.swift */,
 				E9F2094A2BF50988009E9DE7 /* Data.swift */,
 				E9A7CAE82BFD11A500BCED24 /* Course.swift */,
+				E9D16A3B2C08B28C0033A6FF /* RoundStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				E9F2093C2BF4F6D2009E9DE7 /* Profile.swift in Sources */,
 				E9F209382BF4E538009E9DE7 /* RoundRow.swift in Sources */,
 				E9F209362BF3D0F2009E9DE7 /* RoundList.swift in Sources */,
+				E9D16A3C2C08B28C0033A6FF /* RoundStore.swift in Sources */,
 				E9A7CAE32BFCDBB300BCED24 /* CourseView.swift in Sources */,
 				E9F209492BF508DE009E9DE7 /* MapView.swift in Sources */,
 				E9D169F62C063FB90033A6FF /* ProfileHost.swift in Sources */,

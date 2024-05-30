@@ -11,6 +11,7 @@ struct ProfileHost: View {
     @Environment(\.editMode) var editMode
     @Environment(ModelData.self) var modelData
     @State private var draftProfile = Profile.default
+    @State private var showAlert = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -25,7 +26,11 @@ struct ProfileHost: View {
                         draftProfile = modelData.profile
                     }
                     .onDisappear {
-                        modelData.profile = draftProfile
+                        if(!draftProfile.username.isEmpty && draftProfile.username.count < 30) {
+                            modelData.profile = draftProfile
+                        } else {
+                            showAlert = true
+                        }
                     }
             }
             
@@ -39,6 +44,14 @@ struct ProfileHost: View {
                     .font(.title3)
                     .cornerRadius(12)
                     .padding(.bottom, 50)
+                
+                    .alert(isPresented: $showAlert) {
+                        Alert(
+                            title: Text("Invalid Username"),
+                            message: Text("Username cannot be blank nor be longer than 30 characters")
+                        )
+                    }
+
                 
                 if editMode?.wrappedValue == .active {
                     Button("Cancel", role: .cancel) {

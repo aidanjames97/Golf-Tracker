@@ -9,7 +9,6 @@ import Foundation
 
 @Observable
 class ModelData {
-    var rounds: [Round] = load("roundData.json") // loading json round array
     var profile: Profile = Profile.default
     var courses: [Course] = load("courseData.json")
 }

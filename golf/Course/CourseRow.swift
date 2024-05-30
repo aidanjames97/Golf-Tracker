@@ -17,7 +17,6 @@ struct CourseRow: View {
             Spacer()
         }
         .padding(5)
-        .frame(width: .infinity)
         .background(
             RoundedRectangle (cornerRadius: 10)
                 .foregroundStyle(.white)

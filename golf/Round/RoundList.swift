@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RoundList: View {
     @Environment(ModelData.self) var modelData
+    let rounds: [Round]
     @State private var selected: Round?
     
     let gradientColors: [Color] = [
@@ -27,7 +28,7 @@ struct RoundList: View {
                         .font(.title)
                         .bold()
                     
-                    ForEach(modelData.rounds) { round in
+                    ForEach(rounds) { round in
                         Button {
                             selected = round
                         } label: {
@@ -48,7 +49,7 @@ struct RoundList: View {
 }
 
 #Preview {
-    RoundList()
+    RoundList(rounds: Round.sampleData)
         .frame(maxHeight: .infinity)
         .background(Gradient(colors: gradientColors))
         .foregroundStyle(.white)

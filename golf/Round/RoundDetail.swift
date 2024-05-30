@@ -160,6 +160,6 @@ struct TextOverlay: View {
 
 #Preview {
     let modelData = ModelData()
-    return RoundDetail(round: modelData.rounds[1], profile: modelData.profile)
+    return RoundDetail(round: Round.sampleData[0], profile: modelData.profile)
         .frame(maxHeight: .infinity)
 }

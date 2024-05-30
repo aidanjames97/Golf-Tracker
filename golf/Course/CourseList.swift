@@ -11,6 +11,7 @@ struct CourseList: View {
     @Environment(ModelData.self) var modelData
     @State private var searchText: String = ""
     @State private var selected: Course?
+    @Binding var rounds: [Round]
     
     let gradientColors: [Color] = [
         .gradientTop,
@@ -69,7 +70,7 @@ struct CourseList: View {
                     }
                 }
                 .sheet(item: $selected, content: { c in
-                    CourseView(course: c)
+                    CourseView(course: c, rounds: $rounds)
                         .environment(ModelData())
                         .presentationDetents([.fraction(0.999)])
                 })
@@ -77,12 +78,4 @@ struct CourseList: View {
         }
         .padding(.horizontal, 10)
     }
-}
-
-#Preview {
-    CourseList()
-        .frame(maxHeight: .infinity)
-        .background(Gradient(colors: gradientColors))
-        .foregroundStyle(.white)
-        .environment(ModelData())
 }
