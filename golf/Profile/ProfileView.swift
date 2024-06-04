@@ -11,24 +11,23 @@ struct ProfileView: View {
     @Environment(\.editMode) var editMode
     @Environment(ModelData.self) var modelData
     @State private var editProfile = false
-    @State private var draftProfile = Profile.default
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                CircleImage(pic: modelData.profile.pic)
-                if modelData.profile.username.count < 10 {
-                    Text(modelData.profile.username)
+                CircleImage(pic: profile.image)
+                if profile.username.count < 10 {
+                    Text(profile.username)
                         .font(.title)
                         .bold()
                         .padding(.leading, 10)
-                } else if modelData.profile.username.count < 13 {
-                    Text(modelData.profile.username)
+                } else if profile.username.count < 13 {
+                    Text(profile.username)
                         .font(.title2)
                         .bold()
                         .padding(.leading, 10)
                 } else {
-                    Text(modelData.profile.username)
+                    Text(profile.username)
                         .font(.title3)
                         .bold()
                         .padding(.leading, 10)
@@ -44,24 +43,24 @@ struct ProfileView: View {
             HStack {
                 Text("Notifications: ")
                 Spacer()
-                Text("\(modelData.profile.notifications ? "On": "Off" )")
+                Text("\(profile.notifications ? "On": "Off" )")
             }
             .padding(.bottom, 15)
             
             HStack {
                 Text("Handicap: ")
                 Spacer()
-                Text(modelData.profile.handicap)
+                Text(profile.handicap)
             }
             .padding(.bottom, 15)
             
             Spacer()
-            }
-            .padding(.horizontal, 20)
-            .padding()
-            .foregroundStyle(.white)
-            .font(.title3)
-            .bold()
+        }
+        .padding(.horizontal, 20)
+        .padding()
+        .foregroundStyle(.white)
+        .font(.title3)
+        .bold()
     }
 }
 
@@ -78,9 +77,3 @@ struct CircleImage: View {
                 .shadow(radius: 8)
             }
     }
-
-#Preview {
-    ProfileView()
-        .environment(ModelData())
-        .background(Gradient(colors: gradientColors))
-}

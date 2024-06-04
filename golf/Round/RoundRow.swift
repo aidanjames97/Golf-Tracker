@@ -15,7 +15,7 @@ struct RoundRow: View {
             MapView(coordinate: round.locationCoordinates, zoom: 0.02)
                 .frame(width: 70, height: 70)
                 .padding(5)
-                .cornerRadius(25)
+                .cornerRadius(20)
             
             VStack(alignment: .leading) {
                 Text(round.name)

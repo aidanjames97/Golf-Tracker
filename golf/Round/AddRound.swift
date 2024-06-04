@@ -45,28 +45,30 @@ struct AddRound: View {
                             .bold()
                         Text(String(course.ninePar))
                     }
-                    .padding(.trailing, 20)
+                    .padding(.trailing, 15)
                     
                     VStack {
                         Text("9 Dist")
                             .bold()
                         Text(String(course.nineDis))
                     }
-                    .padding(.trailing, 20)
+                    .padding(.trailing, 15)
                     
-                    VStack {
-                        Text("18 Par")
-                            .bold()
-                        Text(String(course.ePar))
+                    if course.ePar != 0 {
+                        VStack {
+                            Text("18 Par")
+                                .bold()
+                            Text(String(course.ePar))
+                        }
+                        .padding(.trailing, 15)
+                        
+                        VStack {
+                            Text("18 Dist.")
+                                .bold()
+                            Text(String(course.eDist)) // using calculated handicap
+                        }
+                        .padding(.trailing, 15)
                     }
-                    .padding(.trailing, 20)
-                    
-                    VStack {
-                        Text("18 Dist.")
-                            .bold()
-                        Text(String(course.eDist)) // using calculated handicap
-                    }
-                    .padding(.trailing, 20)
                 }
                 .padding(.bottom, 10)
                 Divider()

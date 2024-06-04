@@ -16,6 +16,7 @@ let gradientColors: [Color] = [
 struct ContentView: View {
     @State private var selection: Tab = .round // holds current tab view view (default is round list)
     @Binding var rounds: [Round]
+    
     @Environment(\.scenePhase) private var scenePhase
     let saveAction: ()->Void // saveAction property passed an empty action in preview
     
@@ -27,7 +28,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            RoundList(rounds: rounds)
+             RoundList(rounds: $rounds)
                 .environment(ModelData())
                 .tabItem {
                     Image(systemName: "star.circle")
@@ -43,20 +44,13 @@ struct ContentView: View {
                         .aspectRatio(contentMode: .fill)
                 }
                 .tag(Tab.courses)
-            ProfileHost()
-                .environment(ModelData())
-                .tabItem {
-                    Image(systemName: "person.circle")
-                }
-                .tag(Tab.profile)
         }
         .background(Gradient(colors: gradientColors))
         .tabViewStyle(.page)
         .foregroundStyle(.white)
         // observes scenePhase value (trigger actions when a specified value changes)
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() } // if scene moving to inactive phase
-            
+        .onChange(of: scenePhase) {
+            if scenePhase == .inactive { saveAction() } // if scene moving to inactive phase
         }
     }
 }

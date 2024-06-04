@@ -6,16 +6,24 @@
 //
 
 import Foundation
+import SwiftData
 import SwiftUI
 
-struct Profile {
-    @Environment(ModelData.self) var modelData
+@Model
+final class Profile {
     var username: String
-    var notifications: Bool = true
-    var handicap: String = "12"
-    var pic: Image {
+    var notifications: Bool
+    var handicap: String
+    var image: Image {
         Image("jones")
     }
     
-    static let `default` = Profile(username: "StingRox")
+    public init(username: String, notifications: Bool, handicap: String) {
+        self.username = username
+        self.notifications = notifications
+        self.handicap = handicap
+    }
+    
+    static let sampleProfile: Profile = Profile(username: "StingRox", notifications: true, handicap: "22")
+    static let draftProfile: Profile = Profile(username: "", notifications: false, handicap: "")
 }

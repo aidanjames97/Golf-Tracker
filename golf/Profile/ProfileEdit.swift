@@ -17,7 +17,7 @@ struct ProfileEdit: View {
             HStack {
                 Text("Username:")
                 Spacer()
-                TextField(modelData.profile.username, text: $profile.username)
+                TextField(profile.username, text: $profile.username)
                     .multilineTextAlignment(.trailing)
                     .autocorrectionDisabled()
             }
@@ -48,10 +48,4 @@ struct ProfileEdit: View {
         .font(.title3)
         .bold()
     }
-}
-
-#Preview {
-    ProfileEdit(profile: .constant(.default))
-        .environment(ModelData())
-        .background(Gradient(colors: gradientColors))
 }

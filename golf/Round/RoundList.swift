@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct RoundList: View {
-    @Environment(ModelData.self) var modelData
-    let rounds: [Round]
     @State private var selected: Round?
+    @Binding var rounds: [Round]
     
     let gradientColors: [Color] = [
         .gradientTop,
@@ -24,9 +23,14 @@ struct RoundList: View {
                     .fill(.clear)
                     .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .center) {
-                    Text("Completed Rounds")
-                        .font(.title)
-                        .bold()
+                    HStack {
+                        Spacer()
+                        Text("Completed Rounds")
+                            .font(.largeTitle)
+                            .bold()
+                        Spacer()
+                    }
+                    .padding(.bottom, 10)
                     
                     ForEach(rounds) { round in
                         Button {
@@ -37,21 +41,25 @@ struct RoundList: View {
                         }
                     }
                     .sheet(item: $selected, content: { r in
-                        RoundDetail(round: r, profile: modelData.profile)
+                        RoundDetail(rounds: $rounds, round: r)
                             .environment(ModelData())
                             .presentationDetents([.fraction(0.999)])
                     })
+                    .padding(.bottom, 1)
+                    
+                    VStack {
+                        Image(systemName: "figure.golf")
+                            .font(.title)
+                            .bold()
+                            .padding(.bottom, 5)
+                        Text("Swipe to add new round!")
+                            .font(.title3)
+                            .bold()
+                    }
+                    .padding(.top, 50)
                 }
             }
             .padding(.horizontal, 10)
         }
     }
-}
-
-#Preview {
-    RoundList(rounds: Round.sampleData)
-        .frame(maxHeight: .infinity)
-        .background(Gradient(colors: gradientColors))
-        .foregroundStyle(.white)
-        .environment(ModelData())
 }

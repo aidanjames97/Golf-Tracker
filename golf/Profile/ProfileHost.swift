@@ -6,28 +6,29 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ProfileHost: View {
     @Environment(\.editMode) var editMode
     @Environment(ModelData.self) var modelData
-    @State private var draftProfile = Profile.default
+    @Environment(\.modelContext) var modelContext
+    @Query private var profile: Profile
     @State private var showAlert = false
+    @State private var draftProfile = Profile.draftProfile
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             if editMode?.wrappedValue == .inactive {
                 // static profile view
-                ProfileView()
+                ProfileView(profile: profile)
             } else {
                 // edit mode
                 ProfileEdit(profile: $draftProfile)
                     // modifiers below populate the editor w correct profile when user taps "done"
-                    .onAppear {
-                        draftProfile = modelData.profile
-                    }
                     .onDisappear {
                         if(!draftProfile.username.isEmpty && draftProfile.username.count < 30) {
-                            modelData.profile = draftProfile
+                            modelContext.insert(draftProfile)
+                            try? modelContext.save()
                         } else {
                             showAlert = true
                         }
@@ -55,7 +56,6 @@ struct ProfileHost: View {
                 
                 if editMode?.wrappedValue == .active {
                     Button("Cancel", role: .cancel) {
-                        draftProfile = modelData.profile
                         editMode?.animation().wrappedValue = .inactive
                     }
                     .frame(width: 100, height: 50, alignment: .center)
@@ -72,10 +72,3 @@ struct ProfileHost: View {
         .padding()
     }
 }
-
-#Preview {
-    ProfileHost()
-        .environment(ModelData())
-        .background(Gradient(colors: gradientColors))
-}
-
