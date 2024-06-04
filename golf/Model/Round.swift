@@ -66,7 +66,7 @@ extension Round {
         Round(shot: "82", latitude: 43.02397805770129, longitude: -82.26429332824019, name: "Huron Oaks", loc: "Brights Grove, ON", par: 72, handicap: true, date: .init(day: 22, month: "May", year: "2024"), Tputs: 33, Bputs: 1, Wputs: 3, holePlayed: 18),
     ]
     
-    // this to be changes each new round
+    // this to be changes each new roun
     static var emptyRound: Round {
         Round(shot: "", latitude: 0.0, longitude: 0.0, name: "", loc: "", par: 0, handicap: false, date: .init(day: 0, month: "", year: ""), Tputs: 0, Bputs: 0, Wputs: 0, holePlayed: 0)
     }

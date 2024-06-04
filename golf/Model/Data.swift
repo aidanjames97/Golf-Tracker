@@ -9,7 +9,6 @@ import Foundation
 
 @Observable
 class ModelData {
-    var profile: Profile = Profile.default
     var courses: [Course] = load("courseData.json")
 }
 

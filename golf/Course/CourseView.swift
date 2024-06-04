@@ -47,7 +47,7 @@ struct CourseView: View {
                     .bold()
                     .font(.title3)
             } else {
-                Link("www.\(course.name).com", destination: URL(string: "course.website")!)
+                Link("www.\(course.name).com", destination: URL(string: course.website)!)
                     .bold()
                     .font(.title3)
             }
@@ -129,6 +129,7 @@ struct CourseView: View {
             RatingView(rating: course.review)
                 .padding(.top, 5)
                 .padding(.bottom, 10)
+            
             // --- add round section ---
             Button {
                 addRound.toggle()

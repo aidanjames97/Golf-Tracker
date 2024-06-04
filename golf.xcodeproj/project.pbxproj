@@ -12,10 +12,7 @@
 		E9A7CAE72BFD116400BCED24 /* courseData.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A7CAE62BFD116400BCED24 /* courseData.json */; };
 		E9A7CAE92BFD11A500BCED24 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7CAE82BFD11A500BCED24 /* Course.swift */; };
 		E9A7CAEB2BFD30D400BCED24 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7CAEA2BFD30D400BCED24 /* CourseList.swift */; };
-		E9A7CAF02BFE889200BCED24 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A7CAEF2BFE889200BCED24 /* ProfileView.swift */; };
 		E9D169F22BFF97D50033A6FF /* CourseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F12BFF97D50033A6FF /* CourseRow.swift */; };
-		E9D169F42C0638DA0033A6FF /* ProfileEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F32C0638DA0033A6FF /* ProfileEdit.swift */; };
-		E9D169F62C063FB90033A6FF /* ProfileHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D169F52C063FB90033A6FF /* ProfileHost.swift */; };
 		E9D169FB2C0666060033A6FF /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D169FA2C0666060033A6FF /* WelcomeScreen.storyboard */; };
 		E9D16A3C2C08B28C0033A6FF /* RoundStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D16A3B2C08B28C0033A6FF /* RoundStore.swift */; };
 		E9F2090C2BF3CE83009E9DE7 /* golfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2090B2BF3CE83009E9DE7 /* golfApp.swift */; };
@@ -28,7 +25,6 @@
 		E9F209362BF3D0F2009E9DE7 /* RoundList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F209352BF3D0F2009E9DE7 /* RoundList.swift */; };
 		E9F209382BF4E538009E9DE7 /* RoundRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F209372BF4E538009E9DE7 /* RoundRow.swift */; };
 		E9F2093A2BF4E70E009E9DE7 /* RoundDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F209392BF4E70E009E9DE7 /* RoundDetail.swift */; };
-		E9F2093C2BF4F6D2009E9DE7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2093B2BF4F6D2009E9DE7 /* Profile.swift */; };
 		E9F209402BF4FED0009E9DE7 /* AddRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2093F2BF4FED0009E9DE7 /* AddRound.swift */; };
 		E9F209422BF50221009E9DE7 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F209412BF50221009E9DE7 /* Round.swift */; };
 		E9F209492BF508DE009E9DE7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F209482BF508DE009E9DE7 /* MapView.swift */; };
@@ -59,10 +55,7 @@
 		E9A7CAE62BFD116400BCED24 /* courseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = courseData.json; sourceTree = "<group>"; };
 		E9A7CAE82BFD11A500BCED24 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		E9A7CAEA2BFD30D400BCED24 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
-		E9A7CAEF2BFE889200BCED24 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E9D169F12BFF97D50033A6FF /* CourseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseRow.swift; path = golf/Course/CourseRow.swift; sourceTree = SOURCE_ROOT; };
-		E9D169F32C0638DA0033A6FF /* ProfileEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEdit.swift; sourceTree = "<group>"; };
-		E9D169F52C063FB90033A6FF /* ProfileHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHost.swift; sourceTree = "<group>"; };
 		E9D169FA2C0666060033A6FF /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
 		E9D16A3B2C08B28C0033A6FF /* RoundStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundStore.swift; sourceTree = "<group>"; };
 		E9F209082BF3CE83009E9DE7 /* golf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = golf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +71,6 @@
 		E9F209352BF3D0F2009E9DE7 /* RoundList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundList.swift; sourceTree = "<group>"; };
 		E9F209372BF4E538009E9DE7 /* RoundRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRow.swift; sourceTree = "<group>"; };
 		E9F209392BF4E70E009E9DE7 /* RoundDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundDetail.swift; sourceTree = "<group>"; };
-		E9F2093B2BF4F6D2009E9DE7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E9F2093F2BF4FED0009E9DE7 /* AddRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRound.swift; sourceTree = "<group>"; };
 		E9F209412BF50221009E9DE7 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		E9F209482BF508DE009E9DE7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -132,16 +124,6 @@
 			path = Round;
 			sourceTree = "<group>";
 		};
-		E9A7CAEE2BFE885C00BCED24 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				E9A7CAEF2BFE889200BCED24 /* ProfileView.swift */,
-				E9D169F32C0638DA0033A6FF /* ProfileEdit.swift */,
-				E9D169F52C063FB90033A6FF /* ProfileHost.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		E9D169F72C065F4A0033A6FF /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				E9D169F72C065F4A0033A6FF /* Welcome */,
-				E9A7CAEE2BFE885C00BCED24 /* Profile */,
 				E9A7CAED2BFE83E300BCED24 /* Round */,
 				E9A7CAEC2BFE83D600BCED24 /* Course */,
 				E9F209502BF7C299009E9DE7 /* StarRating */,
@@ -217,7 +198,6 @@
 		E9F209432BF50764009E9DE7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E9F2093B2BF4F6D2009E9DE7 /* Profile.swift */,
 				E9F209412BF50221009E9DE7 /* Round.swift */,
 				E9F2094A2BF50988009E9DE7 /* Data.swift */,
 				E9A7CAE82BFD11A500BCED24 /* Course.swift */,
@@ -388,19 +368,15 @@
 				E9F2090E2BF3CE83009E9DE7 /* ContentView.swift in Sources */,
 				E9F209422BF50221009E9DE7 /* Round.swift in Sources */,
 				E9D169F22BFF97D50033A6FF /* CourseRow.swift in Sources */,
-				E9D169F42C0638DA0033A6FF /* ProfileEdit.swift in Sources */,
 				E9F209402BF4FED0009E9DE7 /* AddRound.swift in Sources */,
 				E9A7CAE52BFD0CC900BCED24 /* RatingView.swift in Sources */,
 				E9F2094B2BF50988009E9DE7 /* Data.swift in Sources */,
 				E9A7CAEB2BFD30D400BCED24 /* CourseList.swift in Sources */,
-				E9A7CAF02BFE889200BCED24 /* ProfileView.swift in Sources */,
-				E9F2093C2BF4F6D2009E9DE7 /* Profile.swift in Sources */,
 				E9F209382BF4E538009E9DE7 /* RoundRow.swift in Sources */,
 				E9F209362BF3D0F2009E9DE7 /* RoundList.swift in Sources */,
 				E9D16A3C2C08B28C0033A6FF /* RoundStore.swift in Sources */,
 				E9A7CAE32BFCDBB300BCED24 /* CourseView.swift in Sources */,
 				E9F209492BF508DE009E9DE7 /* MapView.swift in Sources */,
-				E9D169F62C063FB90033A6FF /* ProfileHost.swift in Sources */,
 				E9F2093A2BF4E70E009E9DE7 /* RoundDetail.swift in Sources */,
 				E9F2090C2BF3CE83009E9DE7 /* golfApp.swift in Sources */,
 			);

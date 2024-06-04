@@ -9,8 +9,8 @@ import SwiftUI
 import MapKit
 
 struct RoundDetail: View {
+    @Binding var rounds: [Round]
     var round: Round
-    var profile: Profile
     
     // what is to be displayed onscreen
     var body: some View {
@@ -48,7 +48,7 @@ struct RoundDetail: View {
                 VStack {
                     Text("Handicap")
                         .bold()
-                    Text("-1") // using calculated handicap
+                    Text(String(Int(round.shot)! - round.par)) // using calculated handicap
                 }
             }
             
@@ -111,6 +111,17 @@ struct RoundDetail: View {
                     .font(.title2)
                     .bold()
             }
+            
+            Button("Delete", systemImage: "multiply") {
+                if let index = rounds.firstIndex(of: round) {
+                    rounds.remove(at: index)
+                }
+            }
+            .padding(10)
+            .foregroundStyle(.white)
+            .bold()
+            .background(.gradientTop)
+            .cornerRadius(25)
         }
         .foregroundStyle(.white)
         .background(Gradient(colors: gradientColors))
@@ -156,10 +167,4 @@ struct TextOverlay: View {
         }
         .foregroundStyle(.white)
     }
-}
-
-#Preview {
-    let modelData = ModelData()
-    return RoundDetail(round: Round.sampleData[0], profile: modelData.profile)
-        .frame(maxHeight: .infinity)
 }

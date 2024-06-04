@@ -35,7 +35,7 @@ struct CourseList: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Find a Course")
-                    .font(.title)
+                    .font(.largeTitle)
                     .bold()
                 
                 // Search Bar
